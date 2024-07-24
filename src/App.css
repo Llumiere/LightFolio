@@ -1,0 +1,31 @@
+.centerize{
+    /* padding: 3rem; */
+    justify-items: center;
+    justify-content: center;
+}
+
+.blackbg{
+  /* background-color: red; */
+  /* background: radial-gradient(circle at 100% 50%, #176aaa, #3381db 15%,#3e417b 25%, #7e2ae6 30%, #111226 75%, #000000);
+  background-attachment: scroll; */
+
+}
+.whitebg{
+  /* background-color: red; */
+  /* background: radial-gradient(circle at 100% 50%, #ffffff, #9c6795 15%,#3e417b 25%, #7e2ae6 30%, #d79ed4 75%, #ffffff);
+  background-attachment: scroll; */
+
+}
+.bgg{
+  /* background-color: red; */  
+  background: radial-gradient(circle at 100% 50%, #000000, #3e1639 15%,#111226 25%, #7e2ae6 30%, #111226 75%, #000000);
+  background-attachment: scroll;
+}
+@media only screen and (max-width: 600px) {
+    
+  }
+  @include media-breakpoint-down(md) {
+    body{
+        background-color: #7e2ae6;
+    }
+  }
