@@ -1,5 +1,6 @@
 import { useState, ReactNode } from 'react';
 import { items } from './NavBarItem';
+import './HoverEffect.css'
 
 
 interface Props {
@@ -11,7 +12,9 @@ interface Props {
 }
 
 const Navbar = ({ themeColor = 'primary', children, onSelect, heading, textColor }: Props) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isHover, setIsHovered] = useState<number | false>(false);  
+  const handleMouseEnter = (index: number) => {setIsHovered(index);};
+  const handleMouseLeave = () => {setIsHovered(false);};
   return (
     <>
 
@@ -28,13 +31,17 @@ const Navbar = ({ themeColor = 'primary', children, onSelect, heading, textColor
       <ul className="navbar-nav">
       {items.map((item, index) => (
                   <li
-                    className={`bg-${themeColor} text-${textColor} ${selectedIndex === index ? 'list-group-item active ' : 'list-group-item'}`}
+                    className={`nav-item bg-${themeColor} text-${textColor} se_hover ${isHover === index ? 'hovered' : ''}`}
                     key={item.id}
                     onClick={() => {
-                      onSelect(item.title), setSelectedIndex(index);
+                      null
                     }}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
                   >
+                    <a className="nav-link" aria-current="page" href="#">
                     {item.title}
+                    </a>
                   </li>
                 ))}
                 <li>

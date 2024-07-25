@@ -1,0 +1,8 @@
+
+.se_hover {
+    transition: transform 0.3s ease !important;
+  }
+.se_hover.hovered {
+    transform: scale(1.2); /* Scale the element on hover */
+    cursor: pointer;
+  }
